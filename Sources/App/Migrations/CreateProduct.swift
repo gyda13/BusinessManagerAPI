@@ -13,7 +13,7 @@ struct CreateProduct: Migration {
         database.schema("products")
             .id()
             .field("productname", .string ,.required)
-            .field("laborcost", .string ,.required)
+            .field("laborcost", .double ,.required)
             .field("actualcost", .double ,.required)
             .field("totalprice", .double,.required)
             .field("profit", .double ,.required)
