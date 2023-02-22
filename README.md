@@ -37,7 +37,7 @@ Response:
     "user": {
         "id": UserID
     },
-    "value": TokenValue
+    "value": Token
 }
 ```
 
