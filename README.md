@@ -45,7 +45,7 @@ Response:
 # Products route
 Routes | HTTP | Description
 --- | --- | ---
-http://127.0.0.1:8080/api/products | `Post` | add products , type: Bearer token , body:productname,laborcost,actualcost,totalprice,profit,quantity
+http://127.0.0.1:8080/api/products | `Post` | add products , authorization type: Bearer token , body:productname,laborcost,actualcost,totalprice,profit,quantity
 http://127.0.0.1:8080/api/users/:userID/products |`Get` | get all products for one user
 http://127.0.0.1:8080/api/products  |`Get` | get all products for all users
 
@@ -83,7 +83,7 @@ Response:
 
 Routes | HTTP | Description
 --- | --- | ---
-http://127.0.0.1:8080/api/inventories | `Post` | add inventories , type: Bearer token , body:inventoryname,inventoryprice,quantity.
+http://127.0.0.1:8080/api/inventories | `Post` | add inventories , authorization type: Bearer token , body:inventoryname,inventoryprice,quantity.
 http://127.0.0.1:8080/api/users/:userID/inventories |`Get` | get all inventories for one user
 http://127.0.0.1:8080/api/inventories  |`Get` | get all inventories for all users
 
