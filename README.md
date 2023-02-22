@@ -49,7 +49,8 @@ http://127.0.0.1:8080/api/products | `Post` | add products , type: Bearer token 
 http://127.0.0.1:8080/api/users/:userID/products |`Get` | get all products for one user
 
 
-choose bearer token auth type and use your last token with the add products request
+Choose bearer token auth type and use your last token with the add products request
+
 add product body example:
 ```json
 {
