@@ -8,7 +8,7 @@ Routes | HTTP | Description
 http://127.0.0.1:8080/api/users | `GET` | Get all users.
 http://127.0.0.1:8080/api/users | `POST` | Create a account , body : email,password,businessname.
  
-Create User body example:
+Create account body example:
 
 ```json
 {
@@ -17,7 +17,7 @@ Create User body example:
     "password": String
 }
 ```
-Response
+Response:
 ```json
 {
     "id": UserID,
@@ -26,15 +26,23 @@ Response
 }
 ```
 
-
 Routes | HTTP | Description
 --- | --- | ---
 http://127.0.0.1:8080/api/users/login | `Post` | login , type: basic Auth email(as Username),password.
 
+Response:
+```json
+{
+    "id": TokenID,
+    "user": {
+        "id": UserID
+    },
+    "value": TokenValue
+}
+```
 
 
 
-# products route
 Routes | HTTP | Description
 --- | --- | ---
 http://127.0.0.1:8080/api/products | `Post` | add products , type: Bearer token , body:productname,laborcost,actualcost,totalprice,profit,quantity
