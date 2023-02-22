@@ -49,7 +49,7 @@ http://127.0.0.1:8080/api/products | `Post` | add products , authorization type:
 http://127.0.0.1:8080/api/users/:userID/products |`Get` | get all products for one user
 http://127.0.0.1:8080/api/products  |`Get` | get all products for all users
 
-Choose bearer token auth type and use your last token with the add products request
+Choose bearer token auth type and use your last token with the add product request
 
 add product body example:
 ```json
@@ -86,6 +86,8 @@ Routes | HTTP | Description
 http://127.0.0.1:8080/api/inventories | `Post` | add inventories , authorization type: Bearer token , body:inventoryname,inventoryprice,quantity.
 http://127.0.0.1:8080/api/users/:userID/inventories |`Get` | get all inventories for one user
 http://127.0.0.1:8080/api/inventories  |`Get` | get all inventories for all users
+
+Choose bearer token auth type and use your last token with the add product request
 
 add Inventory body example:
 ```json
