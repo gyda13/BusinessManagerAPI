@@ -23,7 +23,7 @@ The following is just a simple list of the api end points:
 
 >POST /api/products
 
->GET /api/users/:userID/products
+>GET /api/users/:UserID/products
 
 >PUT /api/products/:productID
 
