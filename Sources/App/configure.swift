@@ -10,8 +10,9 @@ public func configure(_ app: Application) throws {
     // app.middleware.use(FileMiddleware(publicDirectory: app.directory.publicDirectory))
 
     if let databaseURL = Environment.get("DATABASE_URL"), var postgresConfig = PostgresConfiguration(url: databaseURL) {
-        postgresConfig.tlsConfiguration = .makeClientConfiguration()
-        postgresConfig.tlsConfiguration?.certificateVerification = .none
+        var tlsConfig = TLSConfiguration.makeClientConfiguration()
+        tlsConfig.certificateVerification = .none
+        postgresConfig.tlsConfiguration = tlsConfig
         app.databases.use(.postgres(configuration: postgresConfig), as: .psql)
     } else {
         // ...
