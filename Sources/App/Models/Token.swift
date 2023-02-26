@@ -21,9 +21,12 @@ final class Token: Model, Content {
     @Field(key: "value")
     var value: String
     
-    
+
     @Parent(key: "userID")
     var user: User
+
+
+    
     
     
     init() {}

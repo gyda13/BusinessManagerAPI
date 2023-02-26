@@ -12,5 +12,8 @@ func routes(_ app: Application) throws {
 
     let inventoryController = InventoryController()
     try app.register(collection: inventoryController)
-    
+  
+   
+
+  
 }

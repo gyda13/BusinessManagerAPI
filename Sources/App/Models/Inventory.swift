@@ -36,10 +36,7 @@ final class Inventory: Model {
     @Parent(key: "userID")
     var user: User
     
-    
-//    @Siblings(through: AcronymCategoryPivot.self, from: \.$acronym, to: \.$category)
-//    var categories: [Category]
-    
+ 
     
     init() {
         
@@ -53,8 +50,6 @@ final class Inventory: Model {
         self.$user.id = userID
     }
     
- 
-      
 }
 
 

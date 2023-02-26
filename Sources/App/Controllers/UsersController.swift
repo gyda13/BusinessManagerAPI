@@ -19,7 +19,6 @@ struct UsersController: RouteCollection {
         usersRoutes.get(":userID", "products", use: getProductHnadler)
         usersRoutes.get(":userID", "inventories", use: getInventoryHnadler)
         
-        
         let basicAuthMiddleware = User.authenticator()
         let basicAuthGroup = usersRoutes.grouped(basicAuthMiddleware)
         basicAuthGroup.post("login", use: loginHandler)
@@ -52,11 +51,13 @@ struct UsersController: RouteCollection {
     }
     
     func getInventoryHnadler(_ req: Request) throws -> EventLoopFuture<[Inventory]> {
+    
         User.find(req.parameters.get("userID"), on: req.db).unwrap(or: Abort(.notFound)).flatMap { user in
             user.$inventories.get(on: req.db)
         }
     }
     
+ 
     
     func loginHandler(_ req: Request) throws -> EventLoopFuture<Token> {
         

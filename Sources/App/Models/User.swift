@@ -33,12 +33,12 @@ final class User: Model {
     @Children(for: \.$user)
     var inventories: [Inventory]
 
-    
-   
+
     
     init(){
     }
     
+ 
     
     init(id: UUID? = nil, businessname: String, email: String, password: String) {
         self.id = id
@@ -46,7 +46,7 @@ final class User: Model {
         self.email = email
         self.password = password
     }
-   
+
     struct Public: Content {
         var id: UUID?
         var businessname: String
