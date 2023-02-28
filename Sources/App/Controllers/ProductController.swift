@@ -16,11 +16,8 @@ struct ProductController: RouteCollection {
         productRoutes.get( use: getAllHandler)
         productRoutes.get(":productID", use: getHandler)
       
-        // get the user info from acronymID
         productRoutes.get(":productID", "user", use: getUserHnadler)
     
-//        productRoutes.get(":acronymID", "categories", use: getCatogriesHandler)
-
         productRoutes.get("search", use: searchHandler)
         
         
@@ -33,7 +30,6 @@ struct ProductController: RouteCollection {
         tokenAuthGroup.put(":productID", use: updateHandler)
         
         
-       // tokenAuthGroup.post(":productID", "categories", ":categoryID", use: addCatogriesHandler)
     }
     
     
@@ -88,26 +84,7 @@ struct ProductController: RouteCollection {
     }
     
     
-    
-//    func getCatogriesHandler(_ req: Request) throws -> EventLoopFuture<[Category]> {
-//        Acronym.find(req.parameters.get("acronymID"), on: req.db).unwrap(or: Abort(.notFound)).flatMap { acronym in
-//            acronym.$categories.get(on: req.db)
-//        }
-//    }
-//
-    
-//    func addCatogriesHandler(_ req: Request) throws ->
-//    EventLoopFuture<HTTPStatus>{
-//        let acronymQuery = Acronym.find(req.parameters.get("acronymID"), on: req.db).unwrap(or: Abort(.notFound))
-//
-//        let categoryQuery = Category.find(req.parameters.get("categoryID"), on: req.db).unwrap(or: Abort(.notFound))
-//
-//        return acronymQuery.and(categoryQuery).flatMap { acronym, category in
-//            acronym.$categories.attach(category, on: req.db).transform(to: .created)
-//        }
-//    }
-//
-    
+  
     
     func searchHandler(_ req: Request) throws ->
     EventLoopFuture<[Product]> {
