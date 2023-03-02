@@ -93,7 +93,7 @@ struct InventoryController: RouteCollection {
         
         return Inventory.query(on: req.db).group(.or) { or in
             or.filter(\.$inventoryname == searchTerm)
-//            or.filter(\.$user.value == searchTerm)
+
         }.all()
         
     }
