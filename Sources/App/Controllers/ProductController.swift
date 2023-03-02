@@ -95,7 +95,7 @@ struct ProductController: RouteCollection {
         
         return Product.query(on: req.db).group(.or) { or in
             or.filter(\.$productname == searchTerm)
-//            or.filter(\.$user.value == searchTerm)
+
         }.all()
         
     }
